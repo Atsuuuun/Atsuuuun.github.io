@@ -21,32 +21,56 @@ body{
   background-image: none;
 }
 
-/*main-header*/
-.main-nav {
-    display: flex;
-    font-size: 25px;
-    text-transform: uppercase;
-    margin-top: 120px;
-    list-style:none;
-}
-.main-nav li {
-    margin-left: 70px;
-}
-.main-nav a {
-    color: #444444;
-}
-.main-nav a:hover {
-    color: #9a9a9a;
-}
-
-.page-header {
+/*ナビゲーションの横並び設定*/
+.gnavi{
   display: flex;
   justify-content:flex-end;
+  margin: 0 60px 50px 0;
+  list-style: none;
+  /*スマホ用*/
+  flex-wrap: wrap;
+  font-size: 22px;
+
 }
-.wrapper {
-    max-width: 1250px;
-    margin: 0 auto;
-    padding: 0 8%;
+.gnavi a {
+  display:flex;
+  padding: 10px 30px;
+  text-decoration: none;
+  color: #444444;
+}
+.gnavi li{
+  margin-bottom: 2px;
+}
+
+/*違うテキストに入れ替える*/
+.gnavi li a{
+  position: relative;
+  padding: 10px 60px;
+}
+.gnavi li span{
+  position: absolute;
+  left: 50%;
+  top:0;
+/*アニメーション設定*/
+  transition: all .5s;
+  transform: translate(-50%, 0);
+  display: block;
+  opacity: 1;
+  white-space: nowrap;
+}
+/*差し替えるテキストの設定*/
+.gnavi li span:nth-child(2){
+  opacity: 0;
+  transform: translate(-50%,100%);
+}
+/*hoverするとテキストが入れ替わる*/
+.gnavi li:hover span:nth-child(1){
+  opacity: 0;
+  transform: translate(-50%,-100%);
+}
+.gnavi li:hover span:nth-child(2){
+  opacity: 1;
+  transform: translate(-50%,0);
 }
 
 /*main-contents*/
@@ -158,7 +182,7 @@ input[type="submit"]{
 
 #splash {
     /*fixedで全面に固定*/
-	position: fixed;
+	position:fixed;
 	z-index: 999;
 	width: 100%;
 	height: 100%;
