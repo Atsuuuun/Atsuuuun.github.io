@@ -21,6 +21,33 @@ body{
   background-image: none;
 }
 
+/*レスポンシブ対応*/
+@media(max-width: 600px) {
+  .page-title{
+    font-size: 16px;
+  }
+/*HEADER*/
+.main-nav{
+  font-size: 12px;
+  margin-top: 10px;
+}
+.main-nav li{
+  margin: 0 16px;
+}
+/* HOME */
+.home-content{
+  margin-top: 16px;
+}
+.page-header{
+  flex-direction: column;
+  align-items:center;
+  }
+article,
+aside {
+  width: 100%;
+}
+}
+
 /*ナビゲーションの横並び設定*/
 .gnavi{
   display: flex;
